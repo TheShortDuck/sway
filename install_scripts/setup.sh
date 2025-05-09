@@ -8,7 +8,7 @@ install_vanilla_sway() {
 
 # Function to install customized swayWM
 install_custom_sway() {
-    echo "Installing JUSTAGUYLINUX customized sway..."
+    echo "Installing TheShortDuck customized sway..."
     bash ~/sway/install_scripts/custom_sway.sh
 }
 
@@ -17,7 +17,7 @@ prompt_installation_choice() {
     local wm_name="$1"
     echo "$wm_name Installation"
     echo "1. Install $wm_name with no customization"
-    echo "2. Install $wm_name with JUSTAGUYLINUX customized"
+    echo "2. Install $wm_name with TheShortDuck customization"
     echo "Or ENTER to skip"
     read -r choice
 
@@ -26,7 +26,7 @@ prompt_installation_choice() {
             echo "Installing $wm_name with no customization..."
             ;;
         2)
-            echo "Installing $wm_name with JUSTAGUYLINUX customized..."
+            echo "Installing $wm_name with TheShortDuck customization..."
             ;;
         *)
             echo "Skipping installation of $wm_name."

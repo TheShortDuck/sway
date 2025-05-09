@@ -26,16 +26,16 @@ echo "Git is installed. Continuing with the script..."
 
 
 # Clone the repository into the home directory
-git clone https://github.com/drewgrif/sway ~/sway
+git clone https://github.com/TheShortDuck/sway ~/sway
 
 
 clear
 echo "
- +-+-+-+-+-+-+-+-+-+-+-+-+-+ 
- |j|u|s|t|a|g|u|y|l|i|n|u|x| 
- +-+-+-+-+-+-+-+-+-+-+-+-+-+ 
- |c|u|s|t|o|m| |s|c|r|i|p|t| 
- +-+-+-+-+-+-+ +-+-+-+-+-+-+                                                                                                            
+###############################################################################
+#  SWAY Custom Install Script                                                 #
+#                                                                             #
+#  Based on JustAGuyLinux Sway install script                                 #
+###############################################################################
 "
 
 # Make setup.sh executable (if needed, though it's typically already executable)
