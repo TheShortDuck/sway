@@ -2,41 +2,50 @@
 set $mod Mod4
 
 # set terminal and menu
-set $term tilix
+set $term ghostty
 set $menu rofi -show drun -modi drun -line-padding 4 -hide-scrollbar -show-icons
 
 # wallpaper
-# output * background ~/.config/backgrounds/debdino.png fill
-output * background ~/.config/backgrounds/wallhaven-zyj28v_3440x1440.png fill
+output * background ~/.config/backgrounds/wallhaven-m3w6pk_3440x1440.png fill
 
-# shortcuts
-bindsym $mod+Return exec $term
-bindsym $mod+Shift+Return exec kitty
-bindsym $mod+Space exec $menu
-bindsym $mod+n exec swaync-client -t -sw
+###########################################################
+#  Shortcuts
+###########################################################
+
+# Terminals
+bindsym $mod+t exec $term
+bindsym Ctrl+Alt+t exec $term
+ 
+# Rofi, filemanager, editors
+bindsym Alt+Space exec $menu
+bindsym $mod+Space exec ~/.config/rofi/powermenu/powermenu.sh
 bindsym $mod+f exec thunar
+bindsym $mod+e exec gedit
+bindsym $mod+c exec code
+bindsym $mod+Shift+c exec code -n
+
+
+bindsym $mod+n exec swaync-client -t -sw
 bindsym $mod+b exec firefox-esr
 bindsym $mod+Shift+b exec firefox-esr -private-window
-bindsym $mod+e exec geany
-bindsym $mod+g exec swaymsg "workspace 8; exec gimp"
 bindsym $mod+d exec swaymsg "workspace 9; exec Discord"
-bindsym $mod+o exec swaymsg "workspace 10; exec obs"
-bindsym $mod+r exec tilix -e ranger
-# bindsym $mod+v exec tilix -e nvim
-bindsym $mod+h exec tilix -e ~/.config/sway/keyhelper.sh
+bindsym $mod+h exec gedit ~/.config/sway/keybinds.txt
 
 # rules
-for_window [app_id="pavucontrol"] floating enable
-for_window [app_id="galculator"] floating enable
-for_window [app_id="kitty"] floating enable, resize set 1280 720
-for_window [app_id="nwg-look"] floating enable
-for_window [app_id="mpv"] floating enable, resize set 1280 720
-for_window [app_id="qimgv"] floating enable, resize set 1280 720
+for_window [app_id="pavucontrol"] floating enable, border normal
+for_window [app_id="galculator"] floating enable, border normal
+for_window [app_id="nwg-look"] floating enable, border normal
+#for_window [app_id="mpv"] floating enable, resize set 1280 720
+#for_window [app_id="qimgv"] floating enable, resize set 1280 720
+for_window [app_id="ghostty"] border normal
+for_window [app_id="btop_id"] border normal, floating enable
 
 # windows
 bindsym $mod+q kill
 bindsym $mod+Shift+r reload; exec notify-send 'sway' 'Restarted'
-bindsym $mod+Shift+q exit
+bindsym $mod+l exec swaylock -f -c 000000
+bindsym Ctrl+Shift+Escape exec foot -a btop_id -e btop
+
 
 # move focus
 bindsym $mod+Left focus left
@@ -63,6 +72,10 @@ bindsym $mod+m exec ~/scripts/changevolume mute
 # Workspaces:
 #
     # Switch to workspace
+    bindsym $mod+Tab workspace next
+    bindsym $mod+Shift+Tab workspace prev
+    bindsym Alt+Tab workspace next
+    bindsym Alt+Shift+Tab workspace prev
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
     bindsym $mod+3 workspace number 3
@@ -89,13 +102,14 @@ bindsym $mod+m exec ~/scripts/changevolume mute
 #
 #
 # Screen Capture
-bindsym Print exec grim ~/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png; exec notify-send 'Grim' 'Image saved to ~/Screenshots'
-bindsym $mod+Print exec grim -g "$(slurp)" ~/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png; exec notify-send 'Grim' 'Selected image saved to ~/Screenshots'
+bindsym Print exec grim ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png; exec notify-send 'Grim' 'Image saved to ~/Pictures/Screenshots'
+bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png; exec notify-send 'Grim' 'Selected image saved to ~/Pictures/Screenshots'
 
 ### Gaps
-gaps inner 16
+gaps inner 4
 gaps outer 1
 default_border pixel 3
+default_floating_border normal
 
 ### Borders
 client.focused          #bd93f9 #bd93f9 #282a36 #bd93f9 #bd93f9
@@ -108,5 +122,11 @@ client.background       #282a36
 bar { 
      swaybar_command waybar
      }
+     
 #GTK issue
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+# SET DANISH KEYBOARD
+input * {
+	xkb_layout "dk"
+}

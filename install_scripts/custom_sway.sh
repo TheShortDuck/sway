@@ -57,7 +57,7 @@ sudo systemctl enable avahi-daemon
 sudo systemctl enable acpid
 
 xdg-user-dirs-update
-mkdir ~/Screenshots/
+mkdir -p ~/Pictures/Screenshots/
 
 # nerd font installation
 bash ~/sway/install_scripts/nerdfonts.sh
@@ -74,7 +74,6 @@ bash ~/sway/install_scripts/rofi-wayland
 \cp -r ~/sway/configs/swaync/ ~/.config/
 \cp -r ~/sway/configs/waybar/ ~/.config/
 \cp -r ~/sway/configs/rofi/ ~/.config/
-\cp -r ~/sway/configs/kitty/ ~/.config/
 \cp -r ~/sway/configs/backgrounds/ ~/.config/
 
 # adding gtk theme and icon theme

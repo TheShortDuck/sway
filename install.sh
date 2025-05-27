@@ -41,13 +41,17 @@ echo "
 # Make setup.sh executable (if needed, though it's typically already executable)
 # chmod +x setup.sh packages.sh
 
-# Run the setup script
-bash ~/sway/install_scripts/setup.sh
+# Run the custom install script
+bash ~/sway/install_scripts/custom_sway.sh
 
 clear
 
-# Run the extra packages
-bash ~/sway/install_scripts/packages.sh
+# Run the ghostty install script
+bash ~/sway/install_scripts/install_ghostty.sh
+
+clear
+
+bash ~/sway/install_scripts/discord_install.sh
 
 clear
 
@@ -57,12 +61,7 @@ echo "Make sure a Display Manager is installed"
 bash ~/sway/install_scripts/gdm.sh
 
 clear
-
-# add bashrc question
-bash ~/sway/install_scripts/add_bashrc.sh
-
-clear 
-
+ 
 bash ~/sway/install_scripts/printers.sh
 
 clear 
@@ -70,5 +69,5 @@ clear
 bash ~/sway/install_scripts/bluetooth.sh
 sudo apt autoremove
 
-printf "\e[1;32mYou can now reboot! Thanks you.\e[0m\n"
+printf "\e[1;32mYou can now reboot! Thank you.\e[0m\n"
 

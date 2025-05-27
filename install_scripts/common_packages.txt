@@ -24,8 +24,9 @@ pavucontrol
 policykit-1-gnome 
 pulsemixer
 slurp
-thunar
-thunar-archive-plugin
-thunar-volman
+nautilus
 xdotool
 xfce4-power-manager
+btop
+gedit
+htop
