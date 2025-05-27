@@ -18,7 +18,7 @@ bindsym Ctrl+Alt+t exec $term
  
 # Rofi, filemanager, editors
 bindsym Alt+Space exec $menu
-bindsym $mod+Space exec ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+Space exec ~/.local/bin/scripts/power.sh
 bindsym $mod+f exec thunar
 bindsym $mod+e exec gedit
 bindsym $mod+c exec code
@@ -29,14 +29,13 @@ bindsym $mod+n exec swaync-client -t -sw
 bindsym $mod+b exec firefox-esr
 bindsym $mod+Shift+b exec firefox-esr -private-window
 bindsym $mod+d exec swaymsg "workspace 9; exec Discord"
+bindsym $mod+Shift+d exec notify-send 'Discord' 'Updating';exec ~/.local/bin/scripts/discord_update.sh
 bindsym $mod+h exec gedit ~/.config/sway/keybinds.txt
 
 # rules
 for_window [app_id="pavucontrol"] floating enable, border normal
 for_window [app_id="galculator"] floating enable, border normal
 for_window [app_id="nwg-look"] floating enable, border normal
-#for_window [app_id="mpv"] floating enable, resize set 1280 720
-#for_window [app_id="qimgv"] floating enable, resize set 1280 720
 for_window [app_id="ghostty"] border normal
 for_window [app_id="btop_id"] border normal, floating enable
 

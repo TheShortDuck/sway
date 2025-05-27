@@ -51,6 +51,17 @@ bash ~/sway/install_scripts/install_ghostty.sh
 
 clear
 
+# Run the fish install script
+bash ~/sway/install_scripts/install_fish.sh
+
+clear
+
+# Run the vscode install script
+bash ~/sway/install_scripts/install_vscode.sh
+
+clear
+
+# Run the Discord install script
 bash ~/sway/install_scripts/discord_install.sh
 
 clear

@@ -69,7 +69,8 @@ bash ~/sway/install_scripts/nwg-look
 bash ~/sway/install_scripts/rofi-wayland
 
 # moving custom config
-\cp -r ~/sway/configs/scripts/ ~
+mkdir -p ~/.local/bin
+\cp -r ~/sway/configs/scripts/ ~/.local/bin/
 \cp -r ~/sway/configs/sway/ ~/.config/
 \cp -r ~/sway/configs/swaync/ ~/.config/
 \cp -r ~/sway/configs/waybar/ ~/.config/
