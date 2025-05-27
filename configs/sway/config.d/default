@@ -19,7 +19,8 @@ bindsym Ctrl+Alt+t exec $term
 # Rofi, filemanager, editors
 bindsym Alt+Space exec $menu
 bindsym $mod+Space exec ~/.local/bin/scripts/power.sh
-bindsym $mod+f exec thunar
+bindsym $mod+Shift+w exec ~/.local/bin/scripts/wifi_menu.sh
+bindsym $mod+f exec nautilus
 bindsym $mod+e exec gedit
 bindsym $mod+c exec code
 bindsym $mod+Shift+c exec code -n
@@ -38,6 +39,7 @@ for_window [app_id="galculator"] floating enable, border normal
 for_window [app_id="nwg-look"] floating enable, border normal
 for_window [app_id="ghostty"] border normal
 for_window [app_id="btop_id"] border normal, floating enable
+for_window [app_id="nextcloud"] floating enable, border normal
 
 # windows
 bindsym $mod+q kill
