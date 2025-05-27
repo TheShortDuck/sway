@@ -31,3 +31,6 @@ btop
 gedit
 htop
 nextcloud-desktop
+pympress
+gparted
+chromium

@@ -66,6 +66,11 @@ bash ~/sway/install_scripts/discord_install.sh
 
 clear
 
+# Run the tailscale install script
+bash ~/sway/install_scripts/install_tailscale.sh
+
+clear
+
 echo "Make sure a Display Manager is installed"
 
 # make sure gdm3 is installed
