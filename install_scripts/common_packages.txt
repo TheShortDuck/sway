@@ -34,3 +34,4 @@ nextcloud-desktop
 pympress
 gparted
 chromium
+unzip

@@ -17,7 +17,7 @@ temp_dir=$(mktemp -d)
 cd "$temp_dir"
 
 # Install dependencies
-sudo apt install -y bison flex ninja-build meson cmake cmake-extras libxcb-xkb-dev libxcb-util0-dev libxkbcommon-x11-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xinerama0-dev libxkbcommon-dev libxcb-cursor-dev libstartup-notification0-dev zip
+sudo apt install -y bison flex ninja-build meson cmake cmake-extras libxcb-xkb-dev libxkbcommon-x11-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xinerama0-dev libxkbcommon-dev libxcb-cursor-dev libstartup-notification0-dev zip  libxcb-keysyms1-dev libxcb1-dev libxcb-keysyms1 libasound2-dev alsa-firmware-loaders alsa-utils libnl-3-dev libmpdclient-dev
 
 # Download and rofi for wayaland
 git clone https://github.com/lbonn/rofi.git ~/sway/rofi

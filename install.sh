@@ -71,6 +71,11 @@ bash ~/sway/install_scripts/install_tailscale.sh
 
 clear
 
+# Run the verilator install script
+bash ~/sway/install_scripts/install_verilator.sh
+
+clear
+
 echo "Make sure a Display Manager is installed"
 
 # make sure gdm3 is installed

@@ -20,6 +20,7 @@ bindsym Ctrl+Alt+t exec $term
 bindsym Alt+Space exec $menu
 bindsym $mod+Space exec ~/.local/bin/scripts/power.sh
 bindsym $mod+Shift+w exec ~/.local/bin/scripts/wifi_menu.sh
+bindsym $mod+w exec ~/.local/bin/scripts/rofi-bluetooth.sh
 bindsym $mod+f exec nautilus
 bindsym $mod+e exec gedit
 bindsym $mod+c exec code
@@ -65,9 +66,14 @@ bindsym $mod+Ctrl+Left resize shrink width 20px
 bindsym $mod+Ctrl+Right resize grow width 20px
 
 # audio
-bindsym $mod+Insert exec ~/scripts/changevolume up
-bindsym $mod+Delete exec ~/scripts/changevolume down
-bindsym $mod+m exec ~/scripts/changevolume mute
+bindsym $mod+a exec pavucontrol
+bindsym XF86AudioRaiseVolume exec ~/.local/bin/scripts/changevolume up
+bindsym XF86AudioLowerVolume exec ~/.local/bin/scripts/changevolume down
+bindsym XF86AudioMute exec ~/.local/bin/scripts/changevolume mute
+
+# Screen Brightness
+bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 4%-
+bindsym XF86MonBrightnessUp exec brightnessctl -c backlight set +4%
 
 #
 # Workspaces:
@@ -107,9 +113,9 @@ bindsym Print exec grim ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png;
 bindsym $mod+Shift+s exec grim -g "$(slurp)" ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H-%M-%S").png; exec notify-send 'Grim' 'Selected image saved to ~/Pictures/Screenshots'
 
 ### Gaps
-gaps inner 4
+gaps inner 1
 gaps outer 1
-default_border pixel 3
+default_border pixel 2
 default_floating_border normal
 
 ### Borders
@@ -128,6 +134,14 @@ bar {
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 
 # SET DANISH KEYBOARD
-input * {
+input "type:keyboard" {
 	xkb_layout "dk"
 }
+
+# CONFIGURE TOUCHPAD
+input "type:touchpad" {
+	tap enabled
+	tap_button_map lrm
+	natural_scroll enabled
+}
+
